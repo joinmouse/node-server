@@ -5,7 +5,7 @@ const http = require('http')
 let server = http.createServer(function(request,response){
   //设置响应头部内容
   response.setHeader('Content-Type','text/html')
-  //response.setHeader('Content-Type','text/plain' charset='utf-8')
+  //response.setHeader('Content-Type',"text/plain;charset=utf-8")
 
   response.write('<html><head><meta charset="utf-8" /></head>')
   response.write('<body>')

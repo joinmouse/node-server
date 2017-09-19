@@ -29,6 +29,7 @@ function express() {
     next()
   }
 
+  //app.use(fn)或者app.use('/xx',fn) 两种形式的解析
   app.use = function(routePath, middleWare){
     if(typeof routePath === 'function') {
       middleWare = routePath
@@ -53,9 +54,6 @@ express.static = function(path){
   }
 }
 
-module.exports = express
-
-
 function makeQuery(req){
   var pathObj = url.parse(req.url, true)
   req.query = pathObj.query
@@ -76,5 +74,6 @@ function makeResponse(res){
   }
 }
 
+module.exports = express
 
 
